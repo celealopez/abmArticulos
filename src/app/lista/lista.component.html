@@ -1,0 +1,28 @@
+<table class="table">
+    <thead>
+        <tr>
+            <th scope="col">Id</th>
+            <th scope="col">Nombre</th>
+            <th scope="col">Precio</th>
+            <th scope="col">Stock</th>
+            <th scope="col">Codigo</th>
+            <th scope="col">Categoria id</th>
+            <th scope="col">Categoria</th>
+            <th scope="col"></th>
+            <th scope="col"></th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let art of articulos">
+            <th scope="row">{{art.id}}</th>
+            <td>{{art.nombre}}</td>
+            <td>{{art.precio}}</td>
+            <td>{{art.stock}}</td>
+            <td>{{art.codigo}}</td>
+            <td>{{art.categoriaId}}</td>
+            <td>{{art.categoria?.nombre}}</td>
+            <td><button class="btn btn-primary" (click)="editarArticulo(art.id)">Editar</button></td>     
+            <td><button class="btn btn-danger" (click)="borrar(art.id)">Borrar</button></td>       
+        </tr>
+    </tbody>
+</table>

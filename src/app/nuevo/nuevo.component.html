@@ -1,0 +1,28 @@
+<form class="row g-3">
+    <div class="col-md-6">
+        <label for="nombre" class="form-label">Nombre</label>
+        <input type="text" [(ngModel)]="articulo.nombre" class="form-control" id="nombre" name="nombre">
+    </div>
+    <div class="col-md-6">
+        <label for="codigo" class="form-label">Codigo</label>
+        <input type="text" [(ngModel)]="articulo.codigo"  class="form-control" id="codigo" name="codigo">
+    </div>
+    <div class="col-md-6">
+        <label for="precio" class="form-label">Precio</label>
+        <input type="text" [(ngModel)]="articulo.precio"  class="form-control" id="precio" name="precio">
+    </div>
+    <div class="col-md-6">
+        <label for="stock" class="form-label">Stock</label>
+        <input type="number" [(ngModel)]="articulo.stock"  class="form-control" id="stock" placeholder="Ingrese un numero" name="stock">
+    </div>
+    <div class="col-md-4">
+        <label for="categoria" class="form-label">Categoria</label>
+        <select [(ngModel)]="articulo.categoriaId" id="categoria" class="form-select" name="categoria"  >
+            <option [ngValue]="item.id" *ngFor="let item of categorias">{{item.nombre}}</option>
+        </select>
+    </div>
+
+    <div class="col-12">
+        <button type="submit" class="btn btn-primary" (click)="agregarArticulo(articulo)">Guardar</button>
+    </div>
+</form>
